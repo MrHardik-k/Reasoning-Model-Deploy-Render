@@ -12,7 +12,7 @@ client = Groq(api_key=GROQ_API_KEY)
 class ChatRequest(BaseModel):
     message: str
 
-@router.get("/predicts")
+@router.post("/predicts")
 async def chat_with_groq(request: ChatRequest):
     try:
         # Send the message to Groq API
